@@ -38,6 +38,12 @@ csharp.class = /class +(\w+)/;
 csharp.class.children = { keyword: /class/ };
 
 /**
+ * Strings
+ */
+
+csharp.string = /("(\\?.)*?")/
+
+/**
  * Keywords
  */
 
@@ -48,12 +54,6 @@ csharp.keyword = /\b(abstract|base|bool|break|byte|case|catch|char|class|const|c
  */
 
 csharp.number = /\b[-+]?(0x[\da-f]+|\d*\.?\d+(e-?\d+)?)\b/;
-
-/**
- * Strings
- */
-
-csharp.string = /(@?"(\\?.)*?\2)/;
 
 /**
  * Method

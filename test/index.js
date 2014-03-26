@@ -41,8 +41,12 @@ describe('highlight-csharp', function(){
     test('while', '<span class="keyword">while</span>');
   })
 
+  it('should match strings', function(){
+    test('"string"', '<span class="string">&quot;string&quot;</span>');
+  })
+
   it('should mach method calls', function(){
-    test('System.Console.WriteLine("such language");', 'System<span class="punctuation">.</span>Console<span class="punctuation">.</span><span class="method">WriteLine<span class="punctuation">(</span></span><span class="string">&quot;</span>such language<span class="string">&quot;</span><span class="punctuation">)</span><span class="punctuation">;</span>');
+    test('System.Console.WriteLine("such language");', 'System<span class="punctuation">.</span>Console<span class="punctuation">.</span><span class="method">WriteLine<span class="punctuation">(</span></span><span class="string">&quot;such language&quot;</span><span class="punctuation">)</span><span class="punctuation">;</span>');
   })
 
   it('should match operators', function(){
@@ -50,7 +54,7 @@ describe('highlight-csharp', function(){
   })
 
   it('should match punctuation', function(){
-    test('{ "im" : "testin" }', '<span class="punctuation">{</span> <span class="string">&quot;</span>im<span class="string">&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;</span>testin<span class="string">&quot;</span> <span class="punctuation">}</span>');
+    test('{ "im" : "testin" }', '<span class="punctuation">{</span> <span class="string">&quot;im&quot;</span> <span class="punctuation">:</span> <span class="string">&quot;testin&quot;</span> <span class="punctuation">}</span>');
   })
 });
 
